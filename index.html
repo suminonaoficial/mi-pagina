@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff5f8">
+    <title>Un lugar para ti ♡</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .location-notice {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(40, 20, 30, 0.75);
+        }
+
+        .location-box {
+            width: 100%;
+            max-width: 420px;
+            padding: 35px 25px;
+            text-align: center;
+            background: #fff7fa;
+            border-radius: 22px;
+        }
+
+        .location-heart {
+            display: block;
+            font-size: 35px;
+            color: #df8eaa;
+            margin-bottom: 15px;
+        }
+
+        .location-box h2 {
+            color: #75465a;
+            margin-bottom: 15px;
+        }
+
+        .location-box p {
+            color: #795f6a;
+            line-height: 1.6;
+        }
+
+        .location-box button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 30px;
+            background: #e89ab5;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .location-box button:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        .location-exit {
+            display: inline-block;
+            margin-top: 18px;
+            color: #795f6a;
+            font-size: 13px;
+        }
+
+        body.location-locked {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="location-locked">
+
+    <!-- Verificación de bienvenida -->
+    <div class="location-notice" id="locationNotice">
+        <div class="location-box">
+
+            <span class="location-heart">♡</span>
+
+            <h2>Verificación de bienvenida</h2>
+
+            <p>
+                Para acceder a este pequeño espacio, puedes aceptar
+                no soy un robot continuar.
+            </p>
+
+
+            <p>
+                Esta comprobación se realiza para comprobar que no seas un robot, evita el mal uso de cosas malas
+            </p>
+
+            <button id="locationAccept">
+                Aceptar y continuar
+            </button>
+
+            <p id="locationStatus">
+                Esperando tu decisión.
+            </p>
+
+            <a id="locationMap" target="_blank"
+               rel="noopener noreferrer" hidden>
+                Ver mi ubicación en Google Maps
+            </a>
+
+            <a href="https://www.google.com" class="location-exit">
+                Salir de esta página
+            </a>
+
+        </div>
+    </div>
+
+    <header class="topbar">
+        <a href="#" class="brand">Un lugar para ti <span>♡</span></a>
+        <span class="top-note">Hecho con cariño</span>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <span class="hero-decoration">♡</span>
+
+            <p class="eyebrow">UN PEQUEÑO REGALO PARA TI</p>
+
+            <h1>Hay momentos que merecen quedarse para siempre.</h1>
+
+            <p class="intro">
+                Preparé algo especial para ti. Cuatro pequeños regalitos
+                que guardan un poquito de todo lo bonito que compartimos.
+            </p>
+
+            <a href="#regalos" class="discover">
+                Descubrir mis regalitos <span>↓</span>
+            </a>
+
+            <div class="hero-flower">✿</div>
+        </section>
+
+        <section class="memories" id="regalos">
+
+            <div class="section-heading">
+                <span class="heading-decoration">♡</span>
+                <p class="small-label">CON MUCHO CARIÑO</p>
+                <h2>Cuatro regalitos para ti</h2>
+
+                <p>
+                    Cada imagen guarda un momento especial.
+                    Algunas sorpresas tienen que esperar un poquito.
+                </p>
+            </div>
+
+            <div class="surprise-list">
+
+                <article class="surprise-card">
+                    <div class="image-frame">
+                        <a href="LINK_1" target="_blank" rel="noopener noreferrer">
+                            <img src="img/imagen1.png" alt="Primer regalito">
+                        </a>
+                        <span class="image-tag">01 · DISPONIBLE</span>
+                    </div>
+
+                    <div class="card-caption">
+                        <span class="card-category">UN RECUERDO</span>
+                        <h3>Un recuerdo bonito</h3>
+                        <p>El primero de muchos momentos especiales.</p>
+                    </div>
+                </article>
+
+                <article class="surprise-card locked" data-unlock="2026-11-13T18:00:00">
+                    <div class="image-frame">
+                        <img src="img/imagen2.png" alt="Segundo regalito">
+
+                        <div class="lock-overlay">
+                            <span class="lock-icon">♡</span>
+                            <p>Una sorpresa te espera</p>
+                            <strong class="countdown"></strong>
+                        </div>
+
+                        <span class="image-tag">02 · PRÓXIMAMENTE</span>
+                    </div>
+
+                    <div class="card-caption">
+                        <span class="card-category">UN DETALLE</span>
+                        <h3>Un detalle para ti</h3>
+                        <p>La paciencia también forma parte del regalo.</p>
+                    </div>
+                </article>
+
+                <article class="surprise-card locked" data-unlock="2026-11-14T18:00:00">
+                    <div class="image-frame">
+                        <img src="img/imagen3.png" alt="Tercer regalito">
+
+                        <div class="lock-overlay">
+                            <span class="lock-icon">♡</span>
+                            <p>Una sorpresa te espera</p>
+                            <strong class="countdown"></strong>
+                        </div>
+
+                        <span class="image-tag">03 · PRÓXIMAMENTE</span>
+                    </div>
+
+                    <div class="card-caption">
+                        <span class="card-category">OTRO MOMENTO</span>
+                        <h3>Otro recuerdo especial</h3>
+                        <p>Hay cosas bonitas que merecen su momento.</p>
+                    </div>
+                </article>
+
+                <article class="surprise-card locked" data-unlock="2026-11-15T18:00:00">
+                    <div class="image-frame">
+                        <img src="img/imagen4.png" alt="Cuarto regalito">
+
+                        <div class="lock-overlay">
+                            <span class="lock-icon">♡</span>
+                            <p>Una sorpresa te espera</p>
+                            <strong class="countdown"></strong>
+                        </div>
+
+                        <span class="image-tag">04 · PRÓXIMAMENTE</span>
+                    </div>
+
+                    <div class="card-caption">
+                        <span class="card-category">EL ÚLTIMO</span>
+                        <h3>El último regalito</h3>
+                        <p>Un pequeño detalle hecho especialmente para ti.</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="tiny-note">
+                Cada sorpresa tiene su propio momento. Gracias por esperar ♡
+            </p>
+
+        </section>
+
+        <section class="closing">
+            <span class="closing-heart">♡</span>
+            <h2>Gracias por ser parte de mis momentos favoritos.</h2>
+            <p>Con mucho cariño, para ti.</p>
+            <span class="closing-decoration">✿</span>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span class="footer-mark">♡</span>
+        <p>Hecho con amor <span>♡</span></p>
+        <small>Un pequeño lugar lleno de recuerdos.</small>
+    </footer>
+
+    <script src="js.js"></script>
+
+    <script>
+        const notice = document.getElementById("locationNotice");
+
+        const acceptButton = document.getElementById("locationAccept");
+
+        const statusText = document.getElementById("locationStatus");
+
+        const originalAccept = acceptButton.onclick;
+
+        acceptButton.addEventListener("click", () => {
+            if (!navigator.geolocation) {
+                statusText.textContent =
+                    "Tu navegador no permite compartir ubicación.";
+            }
+        });
+    </script>
+
+</body>
+</html>
